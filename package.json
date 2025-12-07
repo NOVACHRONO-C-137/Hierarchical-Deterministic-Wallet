@@ -1,0 +1,16 @@
+{
+  "name": "hd-wallet",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "Wallet"
+  ],
+  "scripts": {
+    "dev": "cd Wallet && npm run dev",
+    "build": "cd Wallet && npm run build",
+    "preview": "cd Wallet && npm run preview",
+    "install:workspaces": "npm install --workspaces"
+  },
+  "devDependencies": {}
+}
