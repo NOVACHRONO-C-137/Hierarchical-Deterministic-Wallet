@@ -2,6 +2,14 @@
    Layout & Page Shell
    =========================== */
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus {
+  outline: none;
+}
+
 .app-root {
   width: 100%;
   min-height: 100vh;
