@@ -1,4 +1,4 @@
-A simple and visual explanation of how this HD Wallet application works.
+## THIS APP IS A VISUAL LAB TO UNDERSTAND THE WORKING OF HEIRARCHICAL DETERMINISTIC WALLET WORKS.
 
 ---
 
@@ -16,7 +16,7 @@ It is simply a readable way to store entropy that can later regenerate all keys.
 
 ---
 
-## 🔧 Mnemonic → Seed
+## Mnemonic → Seed
 
 The mnemonic phrase is converted into a 512-bit seed using PBKDF2 hashing.
 
@@ -34,7 +34,8 @@ Using the seed, BIP-32 creates:
 
 From this root, the wallet can deterministically derive infinite child keys.
 
-## Example HD Wallet Derivation Tree (Ethereum)
+## Example:
+HD Wallet Derivation Tree (Ethereum)
 
 | Path | Wallet Index |
 |----|-------------|
