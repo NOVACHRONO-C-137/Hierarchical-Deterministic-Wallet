@@ -34,16 +34,17 @@ Using the seed, BIP-32 creates:
 
 From this root, the wallet can deterministically derive infinite child keys.
 
-Example derivation tree:
+## Example HD Wallet Derivation Tree (Ethereum)
 
-Master Key (m)
- ├─ m/44'/60'/0'/0/0   → Wallet #1
- ├─ m/44'/60'/0'/0/1   → Wallet #2
- └─ m/44'/60'/0'/0/2   → Wallet #3
+| Path | Wallet Index | Description |
+|----|-------------|------------|
+| `m` | — | Master root derived from seed |
+| `m/44'/60'/0'/0/0` | Wallet #1 |
+| `m/44'/60'/0'/0/1` | Wallet #2 |
+| `m/44'/60'/0'/0/2` | Wallet #3 |
 
-This application visually demonstrates this deterministic derivation process.
-
----
+Each increment of `i` deterministically generates a **new wallet**  
+from the **same seed phrase**, without storing any extra data.
 
 ## What Does the Path m/44'/60'/0'/0/i Mean?
 
@@ -63,24 +64,17 @@ deriving a new wallet from the same seed.
 
 ---
 
-## Different Blockchains Use Different Paths
+## Different Blockchains Use Different Derivation Paths
 
-Ethereum (used in this app):
-m/44'/60'/0'/0/i
-
-Bitcoin:
-m/44'/0'/0'/0/i     (Legacy)
-m/49'/0'/0'/0/i     (SegWit)
-m/84'/0'/0'/0/i     (Native SegWit)
-
-Solana (ed25519 / SLIP-0010):
-m/44'/501'/0'/0'
-
-Cardano:
-m/1852'/1815'/0'/0/0
-
-Near:
-m/44'/397'/0'
+| Blockchain | Standard / Curve | Derivation Path | Notes |
+|----------|------------------|-----------------|------|
+| **Ethereum** (used in this app) | BIP44 / secp256k1 | `m/44'/60'/0'/0/i` | Used by MetaMask, Ledger, Polygon, BSC, Avalanche C-Chain |
+| **Bitcoin (Legacy)** | BIP44 | `m/44'/0'/0'/0/i` | Old P2PKH addresses |
+| **Bitcoin (SegWit)** | BIP49 | `m/49'/0'/0'/0/i` | P2SH-SegWit |
+| **Bitcoin (Native SegWit)** | BIP84 | `m/84'/0'/0'/0/i` | Bech32 addresses |
+| **Solana** | SLIP-0010 / ed25519 | `m/44'/501'/0'/0'` | Not compatible with secp256k1 |
+| **Cardano** | CIP-1852 | `m/1852'/1815'/0'/0/0` | Uses extended account model |
+| **Near** | BIP44 | `m/44'/397'/0'` | Single-account style |
 
 ---
 
