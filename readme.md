@@ -36,9 +36,9 @@ From this root, the wallet can deterministically derive infinite child keys.
 
 ## Example HD Wallet Derivation Tree (Ethereum)
 
-| Path | Wallet Index | Description |
-|----|-------------|------------|
-| `m` | — | Master root derived from seed |
+| Path | Wallet Index |
+|----|-------------|
+| `m` | — |
 | `m/44'/60'/0'/0/0` | Wallet #1 |
 | `m/44'/60'/0'/0/1` | Wallet #2 |
 | `m/44'/60'/0'/0/2` | Wallet #3 |
@@ -70,11 +70,8 @@ deriving a new wallet from the same seed.
 |----------|------------------|-----------------|------|
 | **Ethereum** (used in this app) | BIP44 / secp256k1 | `m/44'/60'/0'/0/i` | Used by MetaMask, Ledger, Polygon, BSC, Avalanche C-Chain |
 | **Bitcoin (Legacy)** | BIP44 | `m/44'/0'/0'/0/i` | Old P2PKH addresses |
-| **Bitcoin (SegWit)** | BIP49 | `m/49'/0'/0'/0/i` | P2SH-SegWit |
-| **Bitcoin (Native SegWit)** | BIP84 | `m/84'/0'/0'/0/i` | Bech32 addresses |
 | **Solana** | SLIP-0010 / ed25519 | `m/44'/501'/0'/0'` | Not compatible with secp256k1 |
 | **Cardano** | CIP-1852 | `m/1852'/1815'/0'/0/0` | Uses extended account model |
-| **Near** | BIP44 | `m/44'/397'/0'` | Single-account style |
 
 ---
 
@@ -102,12 +99,3 @@ Public keys store elliptic curve coordinate data,
 while addresses are hashed and shortened for usability.
 
 ---
-
-## References
-
-- BIP-39: Mnemonic generation
-- BIP-32: Hierarchical Deterministic wallets
-- BIP-44: Multi-account derivation paths
-- SLIP-0010: ed25519 derivation (Solana)
-
-
